@@ -5,6 +5,8 @@ container:
 
 test_task:
   install_script:
+    - sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+    - sudo apt-get update
     - sudo apt-get install gcc-4.8 g++-4.8 gcc-4.8-multilib g++-4.8-multilib python2.7
     - sudo pip install wheel
   ci_script:
