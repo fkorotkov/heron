@@ -93,8 +93,8 @@ function discover_platform {
 # Check the ci environment is valid
 function ci_environ {
   environ=$1
-  if [[ $environ =~ travis ]]; then
-    echo "travis"
+  if [[ $environ =~ cirrus ]]; then
+    echo "cirrus"
   elif [[ $environ =~ applatix ]]; then
     echo "applatix"
   else

@@ -64,7 +64,7 @@ echo "Using $PLATFORM platform"
 T="heron build"
 start_timer "$T"
 python ${UTILS}/save-logs.py "heron_build.txt" bazel\
-  --bazelrc=tools/travis/bazel.rc build --config=$PLATFORM heron/... \
+  --bazelrc=tools/cirrus/bazel.rc build --config=$PLATFORM heron/... \
   heronpy/... examples/... storm-compatibility-examples/... \
   eco-examples/...
 end_timer "$T"
@@ -73,7 +73,7 @@ end_timer "$T"
 T="heron test non-flaky"
 start_timer "$T"
 python ${UTILS}/save-logs.py "heron_test_non_flaky.txt" bazel\
-  --bazelrc=tools/travis/bazel.rc test\
+  --bazelrc=tools/cirrus/bazel.rc test\
   --test_summary=detailed --test_output=errors\
   --config=$PLATFORM --test_tag_filters=-flaky heron/... \
   heronpy/... examples/... storm-compatibility-examples/... \
@@ -85,7 +85,7 @@ end_timer "$T"
 T="heron test flaky"
 start_timer "$T"
 python ${UTILS}/save-logs.py "heron_test_flaky.txt" bazel\
-  --bazelrc=tools/travis/bazel.rc test\
+  --bazelrc=tools/cirrus/bazel.rc test\
   --test_summary=detailed --test_output=errors\
   --config=$PLATFORM --test_tag_filters=flaky --jobs=0 heron/... \
   heronpy/... examples/... storm-compatibility-examples/... \
@@ -96,21 +96,21 @@ end_timer "$T"
 T="heron build tarpkgs"
 start_timer "$T"
 python ${UTILS}/save-logs.py "heron_build_tarpkgs.txt" bazel\
-  --bazelrc=tools/travis/bazel.rc build\
+  --bazelrc=tools/cirrus/bazel.rc build\
   --config=$PLATFORM scripts/packages:tarpkgs
 end_timer "$T"
 
 T="heron build binpkgs"
 start_timer "$T"
 python ${UTILS}/save-logs.py "heron_build_binpkgs.txt" bazel\
-  --bazelrc=tools/travis/bazel.rc build\
+  --bazelrc=tools/cirrus/bazel.rc build\
   --config=$PLATFORM scripts/packages:binpkgs
 end_timer "$T"
 
 T="heron build docker images"
 start_timer "$T"
 python ${UTILS}/save-logs.py "heron_build_binpkgs.txt" bazel\
-  --bazelrc=tools/travis/bazel.rc build\
+  --bazelrc=tools/cirrus/bazel.rc build\
   --config=$PLATFORM scripts/images:heron.tar
 end_timer "$T"
 

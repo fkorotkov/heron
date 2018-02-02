@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/twitter/heron.svg?&branch=master)](https://travis-ci.org/twitter/heron)
+[![Build Status](https://cirrus-ci.com/github/twitter/heron.svg?&branch=master)](https://cirrus-ci.com/github/twitter/heron)
 
 ![logo](website/static/img/HeronTextLogo.png)
 

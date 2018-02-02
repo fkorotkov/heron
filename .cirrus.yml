@@ -1,0 +1,19 @@
+container:
+  image: cirrusci/bazel:0.9.0
+  cpu: 8
+  memory: 24G
+
+test_task:
+  install_script:
+    - sudo apt-get install gcc-4.8 g++-4.8 gcc-4.8-multilib g++-4.8-multilib python2.7
+    - sudo pip install wheel
+  ci_script:
+    - which gcc-4.8
+    - gcc --version
+    - which g++-4.8
+    - g++ --version
+    - which python
+    - python -V
+    - which python2.7
+    - python2.7 -V
+    - scripts/cirrus/ci.sh

@@ -50,7 +50,7 @@ of opening GitHub issues.**
 3. Implement proper unit tests along with your change. Verify that all tests can pass.
 
 4. Submit a GitHub pull request that includes your change and test cases.
-Describe clearly your pull request the change. Verify that Travis CI passes.
+Describe clearly your pull request the change. Verify that Cirrus CI passes.
 
 5. Complete a code review by addressing reviewers's comments.
 

@@ -11,4 +11,4 @@ g++ --version
 which python
 python --version
 
-cd /heron && USER=abc scripts/travis/ci.sh
+cd /heron && USER=abc scripts/cirrus/ci.sh

@@ -26,11 +26,7 @@ build --workspace_status_command scripts/release/status.sh
 # This is so we use a recent enough GCC when building.
 # build --crosstool_top //tools/travis/toolchain:CROSSTOOL
 
-# This is so we don't use sandboxed execution. Sandboxed execution
-# runs stuff in a container, and since Travis already runs its script
-# in a container (unless you require sudo in your .travis.yml) this
-# fails to run tests.
-build --spawn_strategy=standalone --genrule_strategy=standalone
+build --spawn_strategy=remote --genrule_strategy=remote --strategy=Javac=remote --remote_rest_cache=http://localhost:12321/
 test --test_strategy=standalone
 
 # Ignore unsupported warning for sandboxing
