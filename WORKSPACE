@@ -782,6 +782,13 @@ new_http_archive(
 )
 # end pex repos
 
+new_http_archive(
+  name = 'org_linaro_components_toolchain_gcc',
+  build_file = 'compilers/linaro_linux_gcc_4.9.BUILD',
+  url = 'http://releases.linaro.org/components/toolchain/binaries/latest-4/arm-linux-gnueabihf/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz',
+  strip_prefix = 'gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf',
+)
+
 # protobuf dependencies for C++ and Java
 http_archive(
     name = "com_google_protobuf",
