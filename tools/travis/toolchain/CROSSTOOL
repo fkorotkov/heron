@@ -4,7 +4,7 @@ default_target_cpu: "same_as_host"
 
 default_toolchain {
   cpu: "k8"
-  toolchain_identifier: "local_linux"
+  toolchain_identifier: "linaro"
 }
 
 toolchain {
@@ -24,7 +24,7 @@ toolchain {
   target_libc: "local"
   target_cpu: "local"
   target_system_name: "local"
-  toolchain_identifier: "clang_linux_armhf"
+  toolchain_identifier: "linaro"
 
   tool_path { name: "ar" path: "linaro_linux_gcc/arm-linux-gnueabihf-ar" }
   tool_path { name: "compat-ld" path: "linaro_linux_gcc/arm-linux-gnueabihf-ld" }
